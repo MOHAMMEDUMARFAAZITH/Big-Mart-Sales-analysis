@@ -30,9 +30,6 @@ if (selected == "Big_mart_sales_prediction"):
 		Outlet_Location_Type = st.number_input('Outlet_Location_Type')
 	with col2:
 		Outlet_Type = st.number_input('Outlet_Type')
-
-	if st.button('Item_Outlet_Sales Test Result'):
-		Item_Outlet_Sales = Sales_model.predict([[Item_Weight,Item_Fat_Content,Item_Visibility,Item_Type,Item_MRP,Outlet_Identifier,Outlet_Establishment_Year,Outlet_Size,Outlet_Location_Type,Outlet_Type]])
-		if Item_Outlet_Sales > 0 :
-			print(Item_Outlet_Sales) 
+	Item_Outlet_Sales = Sales_model.predict([[Item_Weight,Item_Fat_Content,Item_Visibility,Item_Type,Item_MRP,Outlet_Identifier,Outlet_Establishment_Year,Outlet_Size,Outlet_Location_Type,Outlet_Type]])
+	return jsonify({'Prediction': float(Item_Outlet_Sales)})
 	
