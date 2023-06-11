@@ -1,7 +1,7 @@
 import pickle
 import streamlit as st
 from streamlit_option_menu import option_menu
-Sales_model = pickle.load(open("E:\GUVI\ML_project\Big mart sales\Big_mart_sales_prediction.sav","rb"))
+Sales_model = pickle.load(open("Big_mart_sales_prediction.sav","rb"))
 with st.sidebar:
 	
 	selected = option_menu("sales_prediction",["Big_mart_sales_prediction"],default_index=0)
