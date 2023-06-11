@@ -1,4 +1,5 @@
 import pickle
+import xgboost
 import streamlit as st
 from streamlit_option_menu import option_menu
 Sales_model = pickle.load(open("Big_mart_sales_prediction.sav","rb"))
